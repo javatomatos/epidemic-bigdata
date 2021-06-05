@@ -1,8 +1,15 @@
 # epidemic-bigdata
 先来看看结果：
+
 [![2NI1ln.png](https://z3.ax1x.com/2021/06/06/2NI1ln.png)](https://imgtu.com/i/2NI1ln)
+
+声明：该项目参考B站视频：https://www.bilibili.com/video/BV177411j7qJ
+
+本人基于原项目做了补充和完善
 ## 简介：
 基于Python+Flask+Echarts打造一个疫情监控系统，搭建一个疫情的数据可视化项目。
+## 项目架构
+数据获取（爬虫）>>数据持久化（MySQL）>>flask搭建Web后台>>数据可视化(h5+echarts)
 ## 步骤
 * Python网络爬虫
 
@@ -20,6 +27,3 @@
 |PyCharm|2020.1.3|
 |Echarts|5.0.2|
 |jquery|1.11.1|
-
-## 项目架构
-数据获取（爬虫）>>数据持久化（MySQL）>>flask搭建Web后台>>数据可视化(h5+echarts)
