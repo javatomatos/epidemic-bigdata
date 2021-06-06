@@ -44,12 +44,16 @@ def get_c1_data():
     :return: 返回大屏div id=c1 的数据
     """
     # 因为会更新多次数据，取时间戳最新的那组数据
-    sql = "select sum(confirm)," \
+
+    # sql = "select confirm,suspect,heal,dead from history order by ds desc limit 1"
+    sql="select sum(confirm), (select suspect from history order by ds desc limit 1),(select heal from history order by ds desc limit 1),sum(dead) from details where update_time=(select update_time from details order by update_time desc limit 1)"
+    """sql = "select sum(confirm)," \
           "(select suspect from history order by ds desc limit 1)," \
           "sum(heal)," \
           "sum(dead) " \
           "from details " \
           "where update_time=(select update_time from details order by update_time desc limit 1) "
+    """
     res = query(sql)
 
     res_list = [str(i) for i in res[0]]
